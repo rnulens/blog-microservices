@@ -11,4 +11,4 @@ before_install:
   - chmod +x setup-env.sh
 jdk:
   - oraclejdk8
-script: build-all.sh
+script: ./build-all.sh
