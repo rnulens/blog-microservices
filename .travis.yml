@@ -9,6 +9,7 @@ cache:
 before_install:
   - chmod +x build-all.sh
   - chmod +x setup-env.sh
+  - chmod +x docker-push-all.sh
 jdk:
   - oraclejdk8
 sudo: required
