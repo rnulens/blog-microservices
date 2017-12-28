@@ -11,4 +11,10 @@ before_install:
   - chmod +x setup-env.sh
 jdk:
   - oraclejdk8
-script: ./build-all.sh
+sudo: required
+services:
+  - docker
+script:
+  - ./build-all.sh
+  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - ./docker-push-all.sh
