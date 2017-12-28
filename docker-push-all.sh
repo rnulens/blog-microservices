@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
 
 
+function note() {
+    local GREEN NC
+    GREEN='\033[0;32m'
+    NC='\033[0m' # No Color
+    printf "\n${GREEN}$@  ${NC}\n" >&2
+}
+
+set -e
+
 cd microservices/core/product-service;                note "Packaging product...";         docker build -t product-service .; 
 docker push rnulens/product-service:latest; cd -
 cd microservices/core/recommendation-service;         note "Packaging recommendation...";  docker build -t recommendation-service .;
