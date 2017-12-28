@@ -10,13 +10,13 @@ function note() {
 
 set -e
 
-cd microservices/core/product-service;                note "Packaging product...";         docker build -t product-service .; 
+cd microservices/core/product-service;                note "Packaging product...";         docker build -t rnulens/product-service .; 
 docker push rnulens/product-service:latest; cd -
-cd microservices/core/recommendation-service;         note "Packaging recommendation...";  docker build -t recommendation-service .;
+cd microservices/core/recommendation-service;         note "Packaging recommendation...";  docker build -t rnulens/recommendation-service .;
 docker push rnulens/recommendation-service:latest; cd -
-cd microservices/core/review-service;                 note "Packaging review...";          docker build -t review-service .;
+cd microservices/core/review-service;                 note "Packaging review...";          docker build -t rnulens/review-service .;
 docker push rnulens/review-service:latest; cd -
-cd microservices/composite/product-composite-service; note "Packaging composite...";       docker build -t product-composite-service .;
+cd microservices/composite/product-composite-service; note "Packaging composite...";       docker build -t rnulens/product-composite-service .;
 docker push rnulens/product-composite-service:latest; cd -
 
 #cd microservices/support/auth-server;                 note "Building auth...";            ./gradlew clean build; cd -
